@@ -16,11 +16,11 @@ transition: all 0.2s ease-in-out;
 };
 `
 
-export default function Character({ info }) {
+export default function Character({ info, action }) {
   return (
     <StyledCharacter className='character'>
       {info.name}
-      <button>
+      <button onClick={() => action(info.created)}>
         See details
       </button>
     </StyledCharacter>
