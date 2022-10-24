@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
-
 import styled from 'styled-components';
 import axios from 'axios';
 import Character from './components/Character';
+
+const WrapperDiv = styled.div`
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+`
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -25,11 +31,12 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-
-         {data.map((char) => { 
-          return <Character info={char} />
-        })
-      }
+          <WrapperDiv>
+          {data.map((char) => { 
+            return <Character info={char} />
+            })
+          }
+          </WrapperDiv>
       {
         //  currentId && <Details friendId={currentFriendId} close={closeDetails} />
       }
